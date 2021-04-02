@@ -6,7 +6,15 @@
 		// TODO: create a handler
     window.addEventListener("load", function(){
         // TODO: register the handler
+				function setSerchEngine() {
+					return document.querySelector("input[name='engine']:checked");
+				}
 
+				const form = document.getElementById("searchForm");
+				form.addEventListener("submit", function(e) {
+					let engine = setSerchEngine();
+					form.setAttribute("action", engine.value);
+				});
     });
 	</script>
 </head>
